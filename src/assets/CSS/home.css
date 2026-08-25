@@ -1,0 +1,36 @@
+
+        /* Define color variables for easy management */
+        :root {
+            --bg-color: #e0e5ec;
+            --light-shadow: #ffffff;
+            --dark-shadow: #a3b1c6;
+        }
+
+        /* Set base styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+        }
+
+        /* Neomorphism Classes (using Tailwind's @layer for organization) */
+        @layer utilities {
+            .neumorphic-flat {
+                box-shadow: 5px 5px 10px var(--dark-shadow), -5px -5px 10px var(--light-shadow);
+                transition: all 0.3s ease-in-out;
+            }
+            .neumorphic-inset {
+            
+                box-shadow: inset 5px 5px 10px var(--dark-shadow), inset -5px -5px 10px var(--light-shadow);
+                transition: all 0.3s ease-in-out;
+            }
+            .neumorphic-pressed {
+                box-shadow: inset 2px 2px 5px var(--dark-shadow), inset -2px -2px 5px var(--light-shadow);
+            }
+            .text-blue{
+            
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+    
