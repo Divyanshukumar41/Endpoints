@@ -95,20 +95,6 @@ const Sidebar = () => {
         >
           {/* ================= LOGO ================= */}
           <div className="mb-8 flex items-center justify-between">
-            <Link
-              to="/"
-              onClick={() => setIsOpen(false)}
-              className="
-                ml-14
-                md:ml-2
-                text-2xl
-                font-bold
-                text-blue-700
-                whitespace-nowrap
-              "
-            >
-              Endpoints
-            </Link>
 
             {/* Mobile Close Button */}
             <button
