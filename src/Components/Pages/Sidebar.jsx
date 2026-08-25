@@ -93,40 +93,6 @@ const Sidebar = () => {
             [&::-webkit-scrollbar]:hidden
           "
         >
-          {/* ================= LOGO ================= */}
-          <div className="mb-8 flex items-center justify-between">
-
-            {/* Mobile Close Button */}
-            <button
-              onClick={() => setIsOpen(false)}
-              className="
-                md:hidden
-                w-9 h-9
-                flex
-                items-center
-                justify-center
-                rounded-lg
-                hover:bg-slate-100
-                transition-colors
-              "
-              aria-label="Close menu"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
 
           {/* ================= NAVIGATION ================= */}
           <nav className="flex-1" aria-label="Primary sidebar navigation">
