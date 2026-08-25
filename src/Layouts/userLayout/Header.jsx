@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50">
-      <nav className="container mx-auto px-6 py-4 flex justify-between items-center  bg-white/30 rounded-b-xl neumorphic-flat">
+      <nav className="container mx-auto px-6  flex justify-between items-center  bg-white/30 rounded-b-xl neumorphic-flat py-6">
         {/* Logo - Hide on /docs */}
         {isHomePage &&(
           <Link to="/" className="text-2xl font-bold text-blue-600">
@@ -55,14 +55,6 @@ const Header = () => {
         >
           Sign Up
         </a>
-
-        {/* Mobile Menu */}
-        <button
-          id="mobile-menu-button"
-          className="md:hidden p-2 rounded-full neumorphic-flat hover:neumorphic-pressed"
-        >
-          <i data-lucide="menu"></i>
-        </button>
       </nav>
 
       {/* Mobile Menu */}

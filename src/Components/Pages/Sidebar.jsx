@@ -16,9 +16,7 @@ const Sidebar = () => {
             md:hidden
             flex items-center justify-center
             w-6 h-9
-            bg-white/80
             text-slate-700
-            hover:bg-white
             transition-all
           "
           aria-label="Open menu"
@@ -77,6 +75,7 @@ const Sidebar = () => {
         <div
           className="
             relative
+            top-12
             w-full
             h-full
             flex
