@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { userRoutes } from "../../routes/routes";
 
-const Header = () => {
+const Header = ({ isOpen }) => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const isDocsPage = userRoutes.map((route) =>
@@ -11,14 +11,16 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50">
-      <nav className="container mx-auto px-6  flex justify-between items-center  bg-white/30 rounded-b-xl neumorphic-flat py-6">
+      <nav
+        className={`container mx-auto px-6  flex justify-between items-center  bg-white/90 rounded-b-xl neumorphic-flat ${isHomePage ? "py-2" : !isOpen ? "py-2 pl-13" : "py-2"}`}
+      >
         {/* Logo - Hide on /docs */}
-        {isHomePage &&(
+        {/* {!isHomePage &&(
           <Link to="/" className="text-2xl font-bold text-blue-600">
             Endpoints
           </Link>
-        )}
-        {!isDocsPage && (
+        )} */}
+        {isDocsPage && (
           <Link to="/" className="text-2xl font-bold text-blue-600">
             Endpoints
           </Link>

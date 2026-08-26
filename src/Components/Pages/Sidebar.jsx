@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { userRoutes } from "../../routes/routes";
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Sidebar = ({isOpen , setIsOpen}) => {
+
 
   return (
     <>
