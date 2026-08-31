@@ -77,8 +77,8 @@ function FAQ() {
                       {/* Sub Header */}
                       <div
                         className="
-          px-3
-          py-3
+          px-2
+          py-2
           bg-gray-100
           cursor-pointer
           transition-all
