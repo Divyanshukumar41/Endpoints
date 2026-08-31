@@ -77,7 +77,7 @@ function FAQ() {
                       {/* Sub Header */}
                       <div
                         className="
-          px-2
+          px-1
           py-2
           bg-gray-100
           cursor-pointer
@@ -91,15 +91,15 @@ function FAQ() {
                       >
                         <span
                           className={`
-            mr-3
-            px-2
-            py-2
-            ${subfaq.btnColor}
-            text-white
-            font-bold
-            leading-relaxed
-            rounded-md
-          `}
+                                    mr-3
+                                    px-2
+                                    py-2
+                                    ${subfaq.btnColor}
+                                    text-white
+                                    font-bold
+                                    leading-relaxed
+                                    rounded-md
+                                  `}
                         >
                           {subfaq.method}
                         </span>
