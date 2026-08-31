@@ -8,25 +8,17 @@ const Header = ({ isOpen }) => {
   const isDocsPage = userRoutes.map((route) =>
     route.subLink.map((sub) => location.pathname === sub.path),
   );
-
   return (
     <header className="sticky top-0 z-50">
       <nav
         className={`container mx-auto px-6  flex justify-between items-center  bg-white/90 rounded-b-xl neumorphic-flat ${isHomePage ? "py-2" : !isOpen ? "py-2 pl-13" : "py-2"}`}
       >
-        {/* Logo - Hide on /docs */}
-        {/* {!isHomePage &&(
-          <Link to="/" className="text-2xl font-bold text-blue-600">
-            Endpoints
-          </Link>
-        )} */}
         {isDocsPage && (
           <Link to="/" className="text-2xl font-bold text-blue-600">
             Endpoints
           </Link>
         )}
 
-        {/* Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           <Link
             to="/"
@@ -59,7 +51,7 @@ const Header = ({ isOpen }) => {
         </a>
       </nav>
 
-      {/* Mobile Menu */}
+
       <div
         id="mobile-menu"
         className="hidden md:hidden container mx-auto px-6 pb-4"

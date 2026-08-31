@@ -1,0 +1,59 @@
+[
+  {
+    "label": "Auth",
+    "borderColor": "border-red-600 bg-red-50",
+    "apirequests": []
+  },
+  {
+    "label": "User",
+    "borderColor": "border-blue-600 bg-blue-50",
+    "apirequests": [
+      {
+        "label": "Get All Users",
+        "textcolor": "text-blue-600",
+        "description":
+          " The users endpoint provides a versatile dataset of sample user information and related data like carts, posts, and todos, making itideal for testinn g and prototyping user management functionalities inweb applications",
+        "url": "http://localhost:8080/user",
+        "method": "GET",
+        "code": 200,
+        "btnColor": " bg-blue-600"
+      },
+      {
+        "label": "Delete a user",
+        "textcolor": "text-red-600",
+        "description":
+          "Deleting a user will not delete it into the server. It will simulate a DELETE request and will return deleted user with isDeleted & deletedOn keys",
+        "url": "http://localhost:8080/user/:id",
+        "method": "DELETE",
+        "code": 400,
+        "btnColor": " bg-red-600"
+      },
+      {
+        "label": " Add New User",
+        "textcolor": "text-yellow-400",
+        "description":
+          "  Adding a new user will not add it into the server. It will simulate a POST request and will return the new created user with a new id",
+        "url": "http://localhost:8080/user/:id",
+        "method": "POST",
+        "code": 400,
+        "btnColor": " bg-yellow-400"
+      },
+      {
+        "label": "Update a user",
+        "textcolor": "text-green-600",
+        "description":
+          "Updating a user will not update it into the server. It will simulate a PUT/PATCH request and will return updated user with modified data",
+        "url": "http://localhost:8080/user/:id",
+        "method": "PATCH",
+        "code": 400,
+        "btnColor": " bg-green-600"
+      }
+    ]
+  },
+
+  {
+    "label": "Products",
+    "borderColor": "border-green-600 bg-green-50",
+    "apirequests": []
+  }
+]

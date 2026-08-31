@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { userRoutes } from "../../routes/routes";
 import { Link } from "react-router-dom";
 
-const Sidebar = ({isOpen , setIsOpen}) => {
-
-
+const Sidebar = ({ isOpen, setIsOpen }) => {
+  const [isClick, setIsClick] = useState(false);
+  const [idx, setidx] = useState(null);
+  const handleClick = (id) => {
+    setidx(id);
+    setIsClick(!isClick);
+  };
   return (
     <>
-      {/* ================= MOBILE MENU BUTTON ================= */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
@@ -21,7 +24,6 @@ const Sidebar = ({isOpen , setIsOpen}) => {
           "
           aria-label="Open menu"
         >
-          {/* Hamburger */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-6 h-6"
@@ -39,7 +41,6 @@ const Sidebar = ({isOpen , setIsOpen}) => {
         </button>
       )}
 
-      {/* ================= MOBILE OVERLAY ================= */}
       {isOpen && (
         <div
           onClick={() => setIsOpen(false)}
@@ -52,7 +53,6 @@ const Sidebar = ({isOpen , setIsOpen}) => {
         />
       )}
 
-      {/* ================= SIDEBAR ================= */}
       <aside
         className={`
           fixed md:sticky
@@ -75,7 +75,7 @@ const Sidebar = ({isOpen , setIsOpen}) => {
         <div
           className="
             relative
-            top-12
+            pt-15
             w-full
             h-full
             flex
@@ -92,15 +92,13 @@ const Sidebar = ({isOpen , setIsOpen}) => {
             [&::-webkit-scrollbar]:hidden
           "
         >
-
-          {/* ================= NAVIGATION ================= */}
           <nav className="flex-1" aria-label="Primary sidebar navigation">
             <div className="space-y-2">
-              {userRoutes.map((res) => (
+              {userRoutes.map((res, index) => (
                 <div key={res.Label}>
-                  {/* Parent Menu */}
                   <button
                     type="button"
+                    onClick={() => handleClick(index)}
                     className="
                       flex
                       items-center
@@ -123,7 +121,6 @@ const Sidebar = ({isOpen , setIsOpen}) => {
                       transition-colors
                     "
                   >
-                    {/* Home/API Icon */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-[18px] h-[18px] fill-current"
@@ -137,7 +134,6 @@ const Sidebar = ({isOpen , setIsOpen}) => {
 
                     <span className="flex-1">{res.Label}</span>
 
-                    {/* Arrow */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-3 h-3 fill-current"
@@ -146,10 +142,9 @@ const Sidebar = ({isOpen , setIsOpen}) => {
                       <path d="M12.016 18a1.5 1.5 0 0 1-1.065-.434l-9-9a1.506 1.506 0 0 1 2.13-2.13l7.935 7.95L19.95 6.45a1.5 1.5 0 0 1 2.115 2.115l-9 9a1.5 1.5 0 0 1-1.05.435" />
                     </svg>
                   </button>
-
-                  {/* Sub Menu */}
-                  <ul
-                    className="
+                  {idx == index && isClick && (
+                    <ul
+                      className="
                       space-y-1
                       text-sm
                       text-slate-600
@@ -157,13 +152,13 @@ const Sidebar = ({isOpen , setIsOpen}) => {
                       px-3
                       my-1
                     "
-                  >
-                    {res.subLink.map((res1) => (
-                      <li key={res1.path}>
-                        <Link
-                          to={res1.path}
-                          onClick={() => setIsOpen(false)}
-                          className="
+                    >
+                      {res.subLink.map((res1) => (
+                        <li key={res1.path}>
+                          <Link
+                            to={res1.path}
+                            onClick={() => setIsOpen(false)}
+                            className="
                             block
                             hover:text-slate-900
                             hover:bg-slate-100
@@ -172,18 +167,17 @@ const Sidebar = ({isOpen , setIsOpen}) => {
                             py-2
                             transition-colors
                           "
-                        >
-                          {res1.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                          >
+                            {res1.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
             </div>
           </nav>
-
-          {/* ================= USER ================= */}
           <div
             className="
               flex

@@ -1,12 +1,5 @@
-import Login from "../Components/AuthApi/Login";
-import Counter from "../Components/Pages/ClassComp";
-import Home from "../Components/Pages/Home";
-import AddANewUser from "../Components/UserApi/AddANewUser";
-import DeleteAUser from "../Components/UserApi/DeleteAUser";
-import GetAllUsers from "../Components/UserApi/GetAllUsers";
-import GetASingleuser from "../Components/UserApi/GetASingleuser";
-import UpadteUser from "../Components/UserApi/UpadetUser";
 
+import FAQ from "../Components/FAQ";
 export const userRoutes = [
   {
     Label: "Product",
@@ -22,44 +15,43 @@ export const userRoutes = [
       {
         label: "Get All Users",
         path: "/docs",
-        element: <GetAllUsers />,
+        element: <FAQ />,
       },
       {
         label: "Add New User",
         path: "users/add",
-        element: <AddANewUser />,
+        element: <FAQ />,
       },
       {
         label: "Delete A User",
         path: "users/delete",
-        element: <DeleteAUser />,
+        element: <FAQ />,
       },
       {
         label: "Get A Single user",
         path: "users/:id",
-        element: <GetASingleuser />,
+        element: <FAQ />,
       },
       {
         label: "Upadte User",
         path: "users/id",
-        element: <UpadteUser />,
+        element: <FAQ />,
       },
       {
         label: "Counter",
         path: "Counter",
-        element: <Counter />,
+        element: <FAQ />,
       },
     ],
   },
   {
     Label: "Auth",
     subLink: [
-       {
+      {
         label: "Login",
         path: "auth/login",
-        element: <Login />,
+        element: <FAQ />,
       },
-
     ],
   },
 ];
