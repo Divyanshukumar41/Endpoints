@@ -41,7 +41,7 @@ function FAQ() {
                   type="button"
                   onClick={() => handleToggle(index)}
                   aria-expanded={isOpen}
-                  className={`text-base text-left font-medium flex items-center gap-4 cursor-pointer w-full transition-all rounded-2xl   neumorphic-flat  border ${faq.borderColor} px-3 py-3 ${
+                  className={`text-base text-left font-medium flex items-center gap-4 cursor-pointer w-full transition-all rounded   neumorphic-flat  border ${faq.borderColor} px-3 py-3 ${
                     isOpen ? "text-blue-700" : "text-slate-900"
                   }`}
                 >
@@ -84,6 +84,7 @@ function FAQ() {
           transition-all
           border
           w-full
+          rounded
         "
                         aria-expanded={subIsOpen}
                         onClick={() => handleSubToggle(index, subindex)}
